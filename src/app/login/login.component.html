@@ -1,0 +1,39 @@
+  <!-- <button (click)="onClickMe()">Click me!</button>
+    {{clickMessage}}
+  <input (keyup) = "onKey($event)">  
+  {{values}} -->
+
+ <!-- 
+  Template Driven Method 
+  <form #userlogin = "ngForm" (ngSubmit) = "onClickSubmit(userlogin.value)">
+    <input type = "text" name = "username" ngModel>
+    <br />
+    <input type = "password" name = "password" ngModel>
+    <br />
+    <input type = "submit" value = "submit">
+  </form>
+
+-->
+
+<!--Model Drive Method Reactuive Form -->
+<div style="text-align: center">
+<form [formGroup]="formdata" (ngSubmit) = "onClickSubmit(formdata.value)" >
+    <input type="text" name="username" placeholder="Username" 
+    formControlName="username">
+ <br/>
+ 
+ <input type="password" name="password" 
+    placeholder="Password" formControlName="password">
+ <br/>
+ 
+ <input type="submit" class="forsubmit" value="Log In">
+</form>
+<p [hidden] = "!userDetail">
+    Username is {{username}}
+    <br />
+    Password is {{password}}
+  </p>
+  <a routerLink="/" routerLinkActive="active">Home</a>
+  </div>
+  <button (click)="editEmail()">Edit Email One!</button>
+<router-outlet></router-outlet>
